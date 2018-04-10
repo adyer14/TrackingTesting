@@ -115,7 +115,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       mixpanel.track("mouseover", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
       console.log("mouseover");
     })
-    .on("mouseout", function() {
+    .on("mouseout", function(d) {
       ga("send", {
           hitType: "event",
           eventCategory: "Visualization",
@@ -125,7 +125,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       mixpanel.track("mouseout", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
       console.log("mouseout");
     })
-    .on("click", function() {
+    .on("click", function(d) {
       ga("send", {
           hitType: "event",
           eventCategory: "Visualization",
@@ -135,7 +135,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       mixpanel.track("mouseclick", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
       console.log("mouseclick");
     })
-      .on("mousemove", function() {
+      .on("mousemove", function(d) {
       ga("send", {
           hitType: "event",
           eventCategory: "Visualization",
