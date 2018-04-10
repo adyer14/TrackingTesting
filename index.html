@@ -116,12 +116,22 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       console.log("mouseover");
     })
     .on("mouseout", function() {
-      ga('send', 'event', 'Visualization', 'mouseOut', d.data.name);
+      ga("send", {
+          hitType: "event",
+          eventCategory: "Visualization",
+          eventAction: "mouseOut",
+          eventLabel: d.data.name
+    });
       mixpanel.track("mouseout", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
       console.log("mouseout");
     })
     .on("click", function() {
-      ga('send', 'event', 'Visualization', 'mouseClick', d.data.name);
+      ga("send", {
+          hitType: "event",
+          eventCategory: "Visualization",
+          eventAction: "mouseClick",
+          eventLabel: d.data.name
+    });
       mixpanel.track("mouseclick", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
       console.log("mouseclick");
     });
