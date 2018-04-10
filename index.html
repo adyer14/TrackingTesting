@@ -110,7 +110,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
           hitType: "event",
           eventCategory: "Visualization",
           eventAction: "mouseOver",
-          eventLabel: "Planets"
+          eventLabel: d.data.name
     });
       mixpanel.track("mouseover", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
       console.log("mouseover");
