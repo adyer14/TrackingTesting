@@ -80,9 +80,12 @@ d3.csv("exoplanets.csv", type, function(error, data) {
             + "\nplanet radius: " + d.data.radius + " EU"
             + "\nstar distance: " + (isNaN(d.data.distance) ? "N/A" : d.data.distance + " pc");
       });
+
+  svg.selectAll("circle")
+    .classed("planets", true);
 });
 
-  d3.selectAll("circle")
+  d3.selectAll(".planets")
     .on("mouseover", function () {
       ga('send', 'event', 'Planets', 'mouseOver', 'Visualization');
       console.log("mouseover");
