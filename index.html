@@ -135,6 +135,16 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       mixpanel.track("mouseclick", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
       console.log("mouseclick");
     });
+      .on("mousemove", function() {
+      ga("send", {
+          hitType: "event",
+          eventCategory: "Visualization",
+          eventAction: "mouseMove",
+          eventLabel: d.data.name
+    });
+      mixpanel.track("mousemove", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance});
+      console.log("mousemove");
+    });
 });
 
 
