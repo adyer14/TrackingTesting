@@ -104,7 +104,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       ga("send", {
           hitType: "event",
           eventCategory: "Visualization",
-          eventAction: "mouseover",
+          eventAction: "mouseOver",
           eventLabel: "Planets"
     });
       console.log("mouseover");
@@ -114,7 +114,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       ga('send', 'event', 'Planets', 'mouseOut', 'Visualization');
       console.log("mouseout");
     })
-    .on("mouseclick", function() {
+    .on("click", function() {
       ga('send', 'event', 'Planets', 'mouseClick', 'Visualization');
       console.log("mouseclick");
     });
