@@ -84,13 +84,13 @@ d3.csv("exoplanets.csv", type, function(error, data) {
 
   svg.selectAll("circle")
     .on("mouseover", function () {
-      ga('send', 'Planets', 'mouseOver', 'Visualization', 0)
+      ga('send', 'event', 'Planets', 'mouseOver', 'Visualization');
     })
     .on("mouseout", function() {
-      ga('send', 'Planets', 'mouseOut', 'Visualization', 0)
+      ga('send', 'event', 'Planets', 'mouseOut', 'Visualization');
     })
     .on("mouseclick", function() {
-      ga('send', 'Planets', 'mouseClick', 'Visualization', 0)
+      ga('send', 'event', 'Planets', 'mouseClick', 'Visualization');
     })
 
 function type(d) {
