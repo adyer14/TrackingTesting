@@ -84,7 +84,6 @@ d3.csv("exoplanets.csv", type, function(error, data) {
 
   svg.selectAll("circle")
     .classed("planets", true);
-});
 
   d3.selectAll(".planets")
     .on("mouseover", function () {
@@ -98,7 +97,10 @@ d3.csv("exoplanets.csv", type, function(error, data) {
     .on("mouseclick", function() {
       ga('send', 'event', 'Planets', 'mouseClick', 'Visualization');
       console.log("mouseclick");
-    })
+    });
+});
+
+
 
 function type(d) {
   d.radius = +d.radius;
