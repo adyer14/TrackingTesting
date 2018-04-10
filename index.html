@@ -82,7 +82,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       });
 });
 
-  svg.selectAll("circle")
+  d3.selectAll("circle")
     .on("mouseover", function () {
       ga('send', 'event', 'Planets', 'mouseOver', 'Visualization');
       console.log("mouseover");
