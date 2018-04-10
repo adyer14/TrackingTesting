@@ -108,6 +108,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
           eventLabel: "Planets"
     });
       console.log("mouseover");
+      console.log(ga.q);
     })
     .on("mouseout", function() {
       ga('send', 'event', 'Planets', 'mouseOut', 'Visualization');
