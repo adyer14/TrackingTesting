@@ -87,11 +87,11 @@ d3.csv("exoplanets.csv", type, function(error, data) {
 
   d3.selectAll(".planets")
     .on("mouseover", function () {
-      ga('send', {
-          hitType: 'event',
-          eventCategory: 'Visualization',
-          eventAction: 'mouseover',
-          eventLabel: 'Planets'
+      ga("send", {
+          hitType: "event",
+          eventCategory: "Visualization",
+          eventAction: "mouseover",
+          eventLabel: "Planets"
     });
       console.log("mouseover");
     })
