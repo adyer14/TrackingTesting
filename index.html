@@ -82,6 +82,17 @@ d3.csv("exoplanets.csv", type, function(error, data) {
       });
 });
 
+  svg.selectAll("circle")
+    .on("mouseover", function () {
+      ga('send', 'Planets', 'mouseOver', 'Visualization', 0)
+    })
+    .on("mouseout", function() {
+      ga('send', 'Planets', 'mouseOut', 'Visualization', 0)
+    })
+    .on("mouseclick", function() {
+      ga('send', 'Planets', 'mouseClick', 'Visualization', 0)
+    })
+
 function type(d) {
   d.radius = +d.radius;
   d.distance = d.distance ? +d.distance : NaN;
