@@ -112,7 +112,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
           eventAction: "mouseOver",
           eventLabel: d.data.name
     });
-      mixpanel.track("mouseover", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance, "Event": "mouseover"});
+      mixpanel.track("mouseover", {d});
       console.log("mouseover");
       sessionstack("log", d.data);
     })
@@ -123,7 +123,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
           eventAction: "mouseOut",
           eventLabel: d.data.name
     });
-      mixpanel.track("mouseout", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance, "Event": "mouseout"});
+      mixpanel.track("mouseout", {d});
       console.log("mouseout");
       sessionstack("log", d.data);
     })
@@ -134,7 +134,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
           eventAction: "mouseClick",
           eventLabel: d.data.name
     });
-      mixpanel.track("mouseclick", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance, "Event": "mouseclick"});
+      mixpanel.track("mouseclick", {d});
       console.log("mouseclick");
       sessionstack("log", d.data);
     })
@@ -145,7 +145,7 @@ d3.csv("exoplanets.csv", type, function(error, data) {
           eventAction: "mouseMove",
           eventLabel: d.data.name
     });
-      mixpanel.track("mousemove", {"Planet": d.data.name, "Radius": d.data.radius, "Distance": d.data.distance, "Event": "mousemove"});
+      mixpanel.track("mousemove", {d});
       console.log("mousemove");
       sessionstack("log", d.data);
     });
